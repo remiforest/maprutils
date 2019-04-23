@@ -14,7 +14,7 @@ __version__ = "0.0.1"
 def get_cluster_name():
     """ returns the name of the first (default) cluster in mapr-clusters.conf """
     with open('/opt/mapr/conf/mapr-clusters.conf', 'r') as conf_file:
-        first_line = conf_file.readline()
+        first_line = conf_file.readline().rstrip()
         return first_line.split(' ')[0]
 
 
@@ -31,7 +31,7 @@ def get_cluster_cldb(cluster_name=None):
         else:
             line = conf_file.readline()
 
-        return [ip_port for ip_port in line.split(' ') if ":" in ip_port]
+        return [ip_port for ip_port in line.rstrip().split(' ') if ":" in ip_port]
 
 
 
