@@ -8,6 +8,8 @@ Simplifying programming on MapR environments
 
 """
 
+__version__ = "0.0.1"
+
 
 def get_cluster_name():
     """ returns the name of the first (default) cluster in mapr-clusters.conf """
