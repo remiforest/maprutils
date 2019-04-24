@@ -30,7 +30,7 @@ def get_cldb(cluster_name=None):
 
 def get_ip(cluster_name=None):
     """ returns an array with the IP of the cluster node running the CLDB """
-    return [ip_port.split(":")[0] for ip_port in get_cluster_cldb(cluster_name)]
+    return [ip_port.split(":")[0] for ip_port in get_cldb(cluster_name)]
 
 
 
@@ -48,3 +48,10 @@ def is_secure(cluster_name=None):
 
         return "secure=true" in line
 
+
+
+if __name__ == '__main__':
+    print(get_name())
+    print(get_cldb())
+    print(get_ip())
+    print(is_secure())
