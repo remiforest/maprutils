@@ -4,7 +4,7 @@
 
 """ Cluster utilities """
 
-def get_cluster_name():
+def get_name():
     """ returns the name of the first (default) cluster in mapr-clusters.conf """
     with open('/opt/mapr/conf/mapr-clusters.conf', 'r') as conf_file:
         first_line = conf_file.readline().rstrip()
@@ -12,7 +12,7 @@ def get_cluster_name():
 
 
 
-def get_cluster_cldb(cluster_name=None):
+def get_cldb(cluster_name=None):
     """ returns an array with the IP and ports of the cluster CLDB """ 
     with open('/opt/mapr/conf/mapr-clusters.conf', 'r') as conf_file:
         if cluster_name:
@@ -28,7 +28,7 @@ def get_cluster_cldb(cluster_name=None):
 
 
 
-def get_cluster_ip(cluster_name=None):
+def get_ip(cluster_name=None):
     """ returns an array with the IP of the cluster node running the CLDB """
     return [ip_port.split(":")[0] for ip_port in get_cluster_cldb(cluster_name)]
 
