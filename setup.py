@@ -6,6 +6,7 @@ import maprutils
 
 setup(name='maprutils',
       version=maprutils.__version__,
+      include_package_data=True,
       packages=find_packages(),
       description='MapR utilities',
       url='https://github.com/remiforest/maprutils',

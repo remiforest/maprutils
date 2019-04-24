@@ -11,6 +11,8 @@ Simplifying programming on MapR environments
 __version__ = "0.0.1"
 
 
+""" Cluster utilities """
+
 def get_cluster_name():
     """ returns the name of the first (default) cluster in mapr-clusters.conf """
     with open('/opt/mapr/conf/mapr-clusters.conf', 'r') as conf_file:
@@ -54,3 +56,4 @@ def is_secure(cluster_name=None):
             line = conf_file.readline()
 
         return "secure=true" in line
+
